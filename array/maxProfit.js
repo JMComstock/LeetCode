@@ -23,21 +23,15 @@
 
 var maxProfit = function(prices) {
 
-    let maxProfit = 0;
-    let minPrice = prices[0];
-
-    for (let i = 1; i < prices.length; i++) {
-
-        let sellPrice = prices[i]
-        let profit = sellPrice = minPrice
-
-        maxProfit = Math.max(maxProfit, profit)
-
-        if (sellPrice < minPrice) {
-            minPrice = sellPrice
-        }
-        return maxProfit;
-    }
+   let maxprofit = 0;
+           for (let i = 1; i < prices.length; i++) {
+               // Add to the max profit total if the current price is greater than previous
+               // We "sell" when the the opposite is true because we will not buy on days that dip.
+               if (prices[i] > prices[i - 1])
+                   // Add the increase in price to our profit
+                   maxprofit += prices[i] - prices[i - 1];
+           }
+           return maxprofit;
 
 };
 
