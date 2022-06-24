@@ -21,15 +21,15 @@
 // }
 
 var removeDuplicates = function(nums) {
-    
+
     // if the array nums has no numbers inside of it, return false
-    if(nums.length == 0) return 0;
+    if(nums.length === 0) return 0;
 
     let i = 0;
     // iterate through the entire length of the array nums 
     for (let j = 1; j < nums.length; j ++) {
 
-    // if a number in nums that is    
+    // if a number in nums[j] is not in nums[i] add the number to num[i]
         if(nums[j] !== nums[i]){
             i++;
             nums[i] = nums[j];
